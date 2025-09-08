@@ -234,13 +234,7 @@ PersistentClient를 사용해 재시작 시 오"/>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> chromadb</span><br><span class="line"></span><br><span class="line">- **→ 새로 돌릴 때 오류 안나게 해줌**</span><br><span class="line">  <span class="comment">#기존 컬렉션 가져오기</span></span><br><span class="line">  client = chromadb.PersistentClient(path=<span class="string">&#x27;./chroma_db&#x27;</span>)</span><br><span class="line">  collection = chroma_client.get_or_create_collection(name=<span class="string">&#x27;ai_documents&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 불필요한 컬렉션 삭제 &amp; 새로 만들기</span></span><br><span class="line"><span class="comment"># client.delete_collection(&#x27;papers&#x27;)</span></span><br><span class="line">collection = client.create_collection(name=<span class="string">&#x27;papers&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<hr>
-<ul>
-<li><strong>{product}</strong><br>from langchain import PromptTemplate</li>
-</ul>
-<p>template &#x3D; ‘{product}을 홍보하기 위한 재미있고, 신박한 광고 문구를 작성해주세요.’</p>
-<p>prompt&#x3D;PromptTemplate(<br>    template&#x3D;template,<br>    input_variables&#x3D;[‘product’]<br>)</p>
-<p>print(prompt.format(product&#x3D;’수박’))<br>print(prompt.format(product&#x3D;’단감’))</p>
+
 <br>
 
 <hr>

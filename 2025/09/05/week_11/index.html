@@ -304,9 +304,10 @@ PersistentClient를 사용해 재시작 시 오"/>
 
 <p><strong>포멧 인포트 파싱 -3줄짜리를 하나로 엮어 한번에 진행</strong></p>
 <ul>
-<li>키 셋팅 필수→ .env 내부에 OPENAI_API_KEY&#x3D;키<br>from dotenv import load_dotenv<br>import os</li>
+<li>키 셋팅 필수→ .env 내부에 OPENAI_API_KEY&#x3D;키</li>
 </ul>
-<p>load_dotenv()<br>OPENAI_API_KEY&#x3D;os.getenv(“OPENAI_API_KEY”)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">load_dotenv()</span><br><span class="line">OPENAI_API_KEY=os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 <br>
 
 <h3 id="conditional-Chain"><a href="#conditional-Chain" class="headerlink" title="conditional Chain"></a><strong>conditional Chain</strong></h3><ul>
@@ -324,7 +325,7 @@ PersistentClient를 사용해 재시작 시 오"/>
 </ul>
 <p><strong>conditional Chain(조건에 따라 어떤 체인 할지 고를 수 있게 함)</strong></p>
 <ul>
-<li>from langchin_core.runnables 사용(RunnablePassthrough()-사용자 입력값을 그대로 input값으로 넣으,ㅁ)</li>
+<li>from langchin_core.runnables 사용(RunnablePassthrough()-사용자 입력값을 그대로 input값으로 넣음)</li>
 <li>예) 프롬포트 템플릿 2개 만들기</li>
 </ul>
 <p> → 만들어 준 걸 각각의 체인을 만듦  :  g_프롬포트 | llm(평가 체인)   , d_프롬포트 | llm(질의 응답 체인)</p>

@@ -310,29 +310,30 @@ PersistentClient를 사용해 재시작 시 오"/>
 
 <br>
 
-<h3 id="conditional-Chain"><a href="#conditional-Chain" class="headerlink" title="conditional Chain"></a><strong>conditional Chain</strong></h3><ul>
-<li>Sequential Chain<br>→ 두 개 이상의 chain을 직렬 연결 처리<ul>
-<li>[예제] 번역 chain &gt; 요약 chain 연결</li>
-</ul>
-</li>
-</ul>
-<p><strong>번역체인</strong></p>
-<p>translation_chain &#x3D; trans_ptompt | llm</p>
-<p><strong>요약 체인</strong></p>
-<p>summ_prompt |  llm</p>
-<ul>
-<li>langchin_core.runnables → 연달아서 체인 사용 가능 → 체인을 어떻게 구성할 수 있게끔 만들어줌</li>
-</ul>
-<p><strong>conditional Chain(조건에 따라 어떤 체인 할지 고를 수 있게 함)</strong></p>
-<ul>
-<li>from langchin_core.runnables 사용(RunnablePassthrough()-사용자 입력값을 그대로 input값으로 넣음)</li>
-<li>예) 프롬포트 템플릿 2개 만들기</li>
-</ul>
-<p> → 만들어 준 걸 각각의 체인을 만듦  :  g_프롬포트 | llm(평가 체인)   , d_프롬포트 | llm(질의 응답 체인)</p>
-<p>→   각각 .invoke   (두개의 인보크 만들기 : 결과값보는 거 ..) 각 체인 진행 값 다름</p>
-<p>→  정리 필요</p>
-<p>함수() → bool  :  bool형으로 반환</p>
+
 <hr>
+<h1 id="LangChain-체인-구성-정리"><a href="#LangChain-체인-구성-정리" class="headerlink" title="LangChain 체인 구성 정리"></a>LangChain 체인 구성 정리</h1><h2 id="1-번역-체인"><a href="#1-번역-체인" class="headerlink" title="1. 번역 체인"></a>1. 번역 체인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">translation_chain = trans_prompt | llm</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-요약-체인"><a href="#2-요약-체인" class="headerlink" title="2. 요약 체인"></a>2. 요약 체인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summ_chain = summ_prompt | llm</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-langchain-core-runnables"><a href="#3-langchain-core-runnables" class="headerlink" title="3. langchain_core.runnables"></a>3. langchain_core.runnables</h2><ul>
+<li>여러 체인을 <strong>연달아서 사용 가능</strong>\</li>
+<li>체인을 구성할 수 있게끔 만들어줌</li>
+</ul>
+<h2 id="4-Conditional-Chain"><a href="#4-Conditional-Chain" class="headerlink" title="4. Conditional Chain"></a>4. Conditional Chain</h2><ul>
+<li>조건에 따라 어떤 체인을 실행할지 선택 가능</li>
+<li><code>from langchain_core.runnables import RunnablePassthrough</code></li>
+<li><code>RunnablePassthrough()</code> → 사용자 입력값을 그대로 <code>input</code>으로 전달</li>
+</ul>
+<h2 id="5-프롬프트-템플릿-2개-만들기"><a href="#5-프롬프트-템플릿-2개-만들기" class="headerlink" title="5. 프롬프트 템플릿 2개 만들기"></a>5. 프롬프트 템플릿 2개 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g_chain = g_prompt | llm   <span class="comment"># 평가 체인</span></span><br><span class="line">d_chain = d_prompt | llm   <span class="comment"># 질의응답 체인</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-각각의-invoke"><a href="#6-각각의-invoke" class="headerlink" title="6. 각각의 invoke"></a>6. 각각의 invoke</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g_result = g_chain.invoke(user_input)</span><br><span class="line">d_result = d_chain.invoke(user_input)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>두 개의 invoke 결과값은 다름</li>
+</ul>
+<h2 id="7-조건-분기-함수"><a href="#7-조건-분기-함수" class="headerlink" title="7. 조건 분기 함수"></a>7. 조건 분기 함수</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">condition_func</span>(<span class="params"><span class="built_in">input</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">    <span class="comment"># 조건에 맞는 로직 작성</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
 <hr>
 <h3 id="4-Memory-대화-히스토리"><a href="#4-Memory-대화-히스토리" class="headerlink" title="4. Memory (대화 히스토리)"></a>4. <strong>Memory (대화 히스토리)</strong></h3><ul>
 <li><code>BaseChatMessageHistory</code>를 상속해 <strong>메모리 클래스 구현</strong></li>

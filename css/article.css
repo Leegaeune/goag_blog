@@ -177,3 +177,17 @@ pre .deletion {
   white-space: nowrap;
   display: inline-block;
 }
+/* ===== 게시글 전체 가운데 정렬 ===== */
+article {
+  text-align: center;
+}
+/* ===== 표 가운데 정렬 완전 해결 ===== */
+article table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+article th,
+article td {
+  text-align: center;
+}

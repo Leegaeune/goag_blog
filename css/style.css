@@ -624,3 +624,15 @@ pre .deletion {
   white-space: nowrap;
   display: inline-block;
 }
+article {
+  text-align: center;
+}
+article table {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+article th,
+article td {
+  text-align: center;
+}

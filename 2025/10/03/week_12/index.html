@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="📆 2025.09.29 - 2025.10.02 (9월 5주차)📝 플레이데이터 주간회고
+
+
+📚 이번 주 학습 내용 중 체크포인트Chroma DB
+Python 기반 API 제공, LangChain과 쉽게 통합 가능
+PersistentClient를 사용해 재시작 시 오"/>
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe"/>
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="[플레이데이터 SK네트웍스 Family AI 캠프 17기] 15주 차 회고"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="📆 2025.09.29 - 2025.10.02 (9월 5주차)📝 플레이데이터 주간회고
+
+
+📚 이번 주 학습 내용 중 체크포인트Chroma DB
+Python 기반 API 제공, LangChain과 쉽게 통합 가능
+PersistentClient를 사용해 재시작 시 오"/>
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article"/>
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://leegaeune.github.ioimg/home-bg.jpg"/>
+    
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    
+
+    
+        <meta name="twitter:image" content="https://leegaeune.github.ioimg/home-bg.jpg"/>
+    
+
+    <!-- Title -->
+    
+    <title>[플레이데이터 SK네트웍스 Family AI 캠프 17기] 15주 차 회고 - Hexo</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/goag_blog/css/style.css">
+
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/goag_blog/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/goag_blog/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/goag_blog/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/goag_blog/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/goag_blog/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a target="_blank" rel="noopener" href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/goag_blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>[플레이데이터 SK네트웍스 Family AI 캠프 17기] 15주 차 회고</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2025-10-03
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/goag_blog/tags/회고/">#회고</a> <a href="/goag_blog/tags/Hexo/">#Hexo</a> <a href="/goag_blog/tags/AI캠프/">#AI캠프</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/goag_blog/categories/블로그/">블로그</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="📆-2025-09-29-2025-10-02-9월-5주차"><a href="#📆-2025-09-29-2025-10-02-9월-5주차" class="headerlink" title="📆 2025.09.29 - 2025.10.02 (9월 5주차)"></a>📆 2025.09.29 - 2025.10.02 (9월 5주차)</h4><h1 id="📝-플레이데이터-주간회고"><a href="#📝-플레이데이터-주간회고" class="headerlink" title="📝 플레이데이터 주간회고"></a>📝 플레이데이터 주간회고</h1><br>
+<br>
+
+<h2 id="📚-이번-주-학습-내용-중-체크포인트"><a href="#📚-이번-주-학습-내용-중-체크포인트" class="headerlink" title="📚 이번 주 학습 내용 중 체크포인트"></a>📚 이번 주 학습 내용 중 체크포인트</h2><h3 id="Chroma-DB"><a href="#Chroma-DB" class="headerlink" title="Chroma DB"></a><strong>Chroma DB</strong></h3><ul>
+<li>Python 기반 API 제공, LangChain과 쉽게 통합 가능</li>
+<li><code>PersistentClient</code>를 사용해 <strong>재시작 시 오류 없이 컬렉션 유지</strong></li>
+<li>불필요한 컬렉션을 삭제하거나 새로 생성하는 방법 실습</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> chromadb</span><br><span class="line"></span><br><span class="line">- **→ 새로 돌릴 때 오류 안나게 해줌**</span><br><span class="line">  <span class="comment">#기존 컬렉션 가져오기</span></span><br><span class="line">  client = chromadb.PersistentClient(path=<span class="string">&#x27;./chroma_db&#x27;</span>)</span><br><span class="line">  collection = chroma_client.get_or_create_collection(name=<span class="string">&#x27;ai_documents&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 불필요한 컬렉션 삭제 &amp; 새로 만들기</span></span><br><span class="line"><span class="comment"># client.delete_collection(&#x27;papers&#x27;)</span></span><br><span class="line">collection = client.create_collection(name=<span class="string">&#x27;papers&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<hr>
+<h3 id="모델-io"><a href="#모델-io" class="headerlink" title="모델 io"></a><strong>모델 io</strong></h3><ul>
+<li><strong>OutputParser</strong><ul>
+<li><p>모델 응답은 문자열(str)</p>
+</li>
+<li><p><code>output_parser.parse(response.content)</code> → 리스트&#x2F;딕셔너리 등 원하는 구조로 변환 가능</p>
+</li>
+<li><p>print(type(response.content)) → str로 (모델응답은 당연하게 문자열 테스트로 옴)</p>
+</li>
+<li><p><strong>output_Parser.parse(response.content) → output_Parser.parse로 인해 리스트 형태로 바꿔 출력</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><p><strong>JsonOutputParser</strong></p>
+<ol>
+<li>promptTemlpate 로 질의 만들기 → 응답을 llm모델로 받기 → 응답 결과를 jsonoutputparser로 하고 </li>
+<li>{book} 관련 책 {n}권을 보여주세요. (json 형식 지정) → gpt4omini 없는 결과 유의하기</li>
+</ol>
+<ul>
+<li>프롬프트에 JSON 형식을 지정해 응답 제어</li>
+<li>GPT 응답이 무조건 JSON으로 오지 않을 수 있다는 점 유의</li>
+</ul>
+<p>→ 과금 되지 않게 헤헤</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain.prompts <span class="keyword">import</span> PromptTemplate</span><br><span class="line"></span><br><span class="line">template = <span class="string">&quot;&#123;book&#125; 관련 책 &#123;n&#125;권을 JSON 형식으로 추천해주세요.&quot;</span></span><br><span class="line">prompt = PromptTemplate(template=template, input_variables=[<span class="string">&quot;book&quot;</span>, <span class="string">&quot;n&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+
+  <br>
+
+<ul>
+<li><p><strong>HuggingFace 모델 활용</strong></p>
+<ul>
+<li><code>conversational</code> 태스크로 대화형 질의 응답 가능</li>
+</ul>
+</li>
+<li><p><strong>Model Laboratory</strong></p>
+<ul>
+<li>→ 모델의 응답을 비교해서 볼 수 있도록 함 (서로다른 두 개의 모델에 대해 같은 프롬포트를 넣으면 서로 다른 기능을 보게 함)</li>
+</ul>
+</li>
+</ul>
+<br>
+
+<ul>
+<li><p><strong>chin 들어가기</strong></p>
+</li>
+<li><p>여러 컴포넌트를 연결해 순차적으로 실행 가능</p>
+</li>
+<li><p><code>SequentialChain</code> → 번역 후 요약 같은 직렬 파이프라인 구축</p>
+</li>
+<li><p><code>ConditionalChain</code> → 조건에 따라 다른 체인 실행 가능</p>
+</li>
+<li><p><code>langchain_core.runnables</code>를 활용해 체인 구성</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 간단한 체인 실행</span></span><br><span class="line">output = chain.invoke(<span class="built_in">input</span>=&#123;<span class="string">&quot;subject&quot;</span>: <span class="string">&quot;NLP&quot;</span>, <span class="string">&quot;n&quot;</span>: <span class="number">3</span>&#125;)</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+
+<br>
+
+<p><strong>포멧 인포트 파싱 -3줄짜리를 하나로 엮어 한번에 진행</strong></p>
+<ul>
+<li>키 셋팅 필수→ .env 내부에 OPENAI_API_KEY&#x3D;키</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">load_dotenv()</span><br><span class="line">OPENAI_API_KEY=os.getenv(<span class="string">&quot;OPENAI_API_KEY&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<hr>
+<h1 id="LangChain-체인-구성-정리"><a href="#LangChain-체인-구성-정리" class="headerlink" title="LangChain 체인 구성 정리"></a>LangChain 체인 구성 정리</h1><h2 id="1-번역-체인"><a href="#1-번역-체인" class="headerlink" title="1. 번역 체인"></a>1. 번역 체인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">translation_chain = trans_prompt | llm</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-요약-체인"><a href="#2-요약-체인" class="headerlink" title="2. 요약 체인"></a>2. 요약 체인</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summ_chain = summ_prompt | llm</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-langchain-core-runnables"><a href="#3-langchain-core-runnables" class="headerlink" title="3. langchain_core.runnables"></a>3. langchain_core.runnables</h2><ul>
+<li>여러 체인을 <strong>연달아서 사용 가능</strong>\</li>
+<li>체인을 구성할 수 있게끔 만들어줌</li>
+</ul>
+<h2 id="4-Conditional-Chain"><a href="#4-Conditional-Chain" class="headerlink" title="4. Conditional Chain"></a>4. Conditional Chain</h2><ul>
+<li>조건에 따라 어떤 체인을 실행할지 선택 가능</li>
+<li><code>from langchain_core.runnables import RunnablePassthrough</code></li>
+<li><code>RunnablePassthrough()</code> → 사용자 입력값을 그대로 <code>input</code>으로 전달</li>
+</ul>
+<h2 id="5-프롬프트-템플릿-2개-만들기"><a href="#5-프롬프트-템플릿-2개-만들기" class="headerlink" title="5. 프롬프트 템플릿 2개 만들기"></a>5. 프롬프트 템플릿 2개 만들기</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g_chain = g_prompt | llm   <span class="comment"># 평가 체인</span></span><br><span class="line">d_chain = d_prompt | llm   <span class="comment"># 질의응답 체인</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-각각의-invoke"><a href="#6-각각의-invoke" class="headerlink" title="6. 각각의 invoke"></a>6. 각각의 invoke</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g_result = g_chain.invoke(user_input)</span><br><span class="line">d_result = d_chain.invoke(user_input)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>두 개의 invoke 결과값은 다름</li>
+</ul>
+<h2 id="7-조건-분기-함수"><a href="#7-조건-분기-함수" class="headerlink" title="7. 조건 분기 함수"></a>7. 조건 분기 함수</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">condition_func</span>(<span class="params"><span class="built_in">input</span></span>) -&gt; <span class="built_in">bool</span>:</span><br><span class="line">    <span class="comment"># 조건에 맞는 로직 작성</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span> <span class="keyword">or</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="4-Memory-대화-히스토리"><a href="#4-Memory-대화-히스토리" class="headerlink" title="4. Memory (대화 히스토리)"></a>4. <strong>Memory (대화 히스토리)</strong></h3><ul>
+<li><code>BaseChatMessageHistory</code>를 상속해 <strong>메모리 클래스 구현</strong></li>
+<li>세션 ID별로 히스토리를 저장하여 대화 맥락 유지 가능</li>
+<li><code>MessagePlaceholder(variable_name=&quot;history&quot;)</code>를 사용해 이전 대화 삽입</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> langchain_core.chat_history <span class="keyword">import</span> BaseChatMessageHistory</span><br><span class="line"><span class="keyword">from</span> langchain_core.messages <span class="keyword">import</span> HumanMessage</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">InMemoryHistory</span>(<span class="title class_ inherited__">BaseChatMessageHistory</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.messages = []</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">add_message</span>(<span class="params">self, message</span>):</span><br><span class="line">        <span class="variable language_">self</span>.messages.append(message)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">clear</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.messages = []</span><br><span class="line"></span><br><span class="line">history = InMemoryHistory()</span><br><span class="line">history.add_message(HumanMessage(content=<span class="string">&quot;안녕하세요!&quot;</span>))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<br>
+
+<hr>
+<h3 id="오류"><a href="#오류" class="headerlink" title="오류"></a>오류</h3><ul>
+<li><p>append():배열로 저장되어서 꺼낼 때 배열이 나가 오류남. 즉 배열안에 배열을 넣음 → extend(): 배열 통으로 들어가는게 아닌, 요소를 하나씩 꺼냄</p>
+</li>
+<li><p>할루시네이션 완화를 위한 방법 → <strong>에이전트(Agent), Retrieval 강화</strong> 필요성 확인</p>
+</li>
+</ul>
+<h2 id="🧑‍💻-Insights"><a href="#🧑‍💻-Insights" class="headerlink" title="🧑‍💻 Insights"></a>🧑‍💻 Insights</h2><ul>
+<li><p><strong>파이프라인 설계의 중요성</strong><br>Chain을 단순히 이어붙이는 게 아니라, 입력&#x2F;출력 구조를 설계해야 안정적으로 동작함</p>
+</li>
+<li><p><strong>모델 응답은 가공이 필수</strong><br>LLM 응답은 기본적으로 문자열이라, Parser를 통한 구조화 없이는 실무에서 활용하기 어렵..</p>
+</li>
+<li><p><strong>기억을 넣어야 진짜 대화</strong><br>Memory 기능을 붙이지 않은 챗봇은 결국 단발성 Q&amp;A에 불과했고,<br>세션 관리와 히스토리 저장이 곧 서비스 완성도를 좌우.</p>
+</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="🔑-이번-주에-배운-중요한-개념"><a href="#🔑-이번-주에-배운-중요한-개념" class="headerlink" title="🔑 이번 주에 배운 중요한 개념"></a>🔑 이번 주에 배운 중요한 개념</h2><h3 id="1-Output-Parsing"><a href="#1-Output-Parsing" class="headerlink" title="1. Output Parsing"></a>1. Output Parsing</h3><p>모델 응답을 원하는 형태로 변환해야만 <strong>후처리 로직</strong>을 단순화할 수 있다.<br>특히 JSON 파싱은 추천, 검색, 요약 등 실용적인 서비스에 필수.</p>
+<hr>
+<h3 id="2-Conditional-Chain"><a href="#2-Conditional-Chain" class="headerlink" title="2. Conditional Chain"></a>2. Conditional Chain</h3><p>조건에 따라 다른 체인을 실행하게 하면 <strong>분기 처리</strong>가 가능하다.<br>→ 예: 긍정적 피드백이면 요약, 부정적 피드백이면 개선안 제안.</p>
+<hr>
+<h3 id="3-Memory"><a href="#3-Memory" class="headerlink" title="3. Memory"></a>3. Memory</h3><p>대화형 시스템의 핵심은 “기억”.<br>히스토리를 저장하고 불러오는 구조를 직접 구현해 보면서,<br>단순한 API 호출을 넘어 <strong>대화 지속성</strong>을 구현할 수 있었다.</p>
+<br>
+---
+
+
+<h2 id="Keep-Problem-Try"><a href="#Keep-Problem-Try" class="headerlink" title="Keep &#x2F; Problem &#x2F; Try"></a>Keep &#x2F; Problem &#x2F; Try</h2><h3 id="Keep"><a href="#Keep" class="headerlink" title="Keep"></a>Keep</h3><ul>
+<li>체인 구조를 직접 설계해보는 습관  </li>
+<li>Parser를 적극 활용해 모델 응답을 구조화  </li>
+<li>작은 단위부터 통합하는 방식 유지</li>
+</ul>
+<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
+<li>체인이 복잡해질수록 입력&#x2F;출력 형식이 혼란스러움  </li>
+<li>Memory 세션 관리가 꼬이면 대화 기록이 뒤섞임  </li>
+<li>JSON 응답이 가끔 깨져서 예외 처리 필요</li>
+</ul>
+<h3 id="Try"><a href="#Try" class="headerlink" title="Try"></a>Try</h3><ul>
+<li>Chain 실행 시 <code>assert</code>로 입력&#x2F;출력 형식 검증  </li>
+<li>세션 관리 유틸 함수를 따로 만들어 모듈화  </li>
+<li>JSON 파싱 실패 시 예외 복구 로직 추가</li>
+</ul>
+<br>
+
+<hr>
+<h2 id="🌟-마무리-소감"><a href="#🌟-마무리-소감" class="headerlink" title="🌟 마무리 소감"></a>🌟 마무리 소감</h2><p>이번 주는 <strong>LLM과 LangChain의 실전 활용</strong>에 본격적으로 들어간 한 주였다.<br>특히 Chroma DB, Chain, Memory는 앞으로 내가 만들 프로젝트(문서 기반 Q&amp;A 시스템)의 뼈대를 구성할 핵심 기술임을 알게 되었다.  </p>
+<p>지난주가 딥러닝의 “모델 진화 과정”을 이해한 시간이었다면,<br>이번 주는 <strong>그 모델을 실제 서비스로 연결하는 방법</strong>을 배운 시간이었다.  </p>
+<p>실험 과정에서 수많은 오류와 시행착오가 있었지만,<br>이 과정을 통해 “AI 모델을 서비스로 구현한다”는 게 단순한 API 호출이 아니라<br><strong>데이터 저장 → 체인 설계 → 응답 파싱 → 히스토리 관리</strong>까지 아우르는 종합적인 작업임을 체감했다.  </p>
+<p>앞으로 진행할 <strong>내외부 문서 기반 질의응답 시스템</strong> 프로젝트에서<br>이번 주에 배운 기술들을 실제로 활용할 수 있을 것 같아 기대된다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2025 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
